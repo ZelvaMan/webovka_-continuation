@@ -1,0 +1,287 @@
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+.header  {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+/* footer section start*/
+footer{
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+/*footer section end*/
+/*scrollbar*/
+body::-webkit-scrollbar
+{
+  width: 0.5rem;
+}
+body::-webkit-scrollbar-track
+{
+  background: #f1f1f1;
+}
+body::-webkit-scrollbar-thumb
+{
+  background: #ff802c;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+
+}
+#prihlas {
+  color: green;
+}
+#registr{
+  color: red;
+}
+#prihlaseni :hover
+{
+  background-color: #ff864ee1;
+  color: white; 
+}
+#prihlaseni {
+  float: inline-end;
+}
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header-left {
+float: left;
+width: 100%;
+ }
+ ::-moz-selection { 
+  color: #ff6000;
+  background: rgb(58, 54, 54);
+}
+
+::selection {
+  color: #ff6000;
+  background: rgb(58, 54, 54);
+}
+
+
+#logo
+{
+    width: 60px;
+}
+.btn
+{
+    transition: 0.5s;
+}
+.btn:hover {
+    background-color: #ff864ee1;
+    color: white;
+  }
+  .btn{
+      margin-top: 12px;
+  }
+  h1{
+      text-align: center;
+      font-size: 3em;
+      margin-block-start: 0;
+    margin-block-end: 0.7em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .prvni, .druhy{
+    width: 50%;
+   margin: auto 60px  auto 60px;
+   text-align: center;
+
+  }
+.main{
+  overflow: hidden;
+}
+  .druhy{
+    float: right;
+  }
+.img_fadel{
+    width: 100%;
+    float: right;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+    -webkit-mask-size: 100% ;
+    -webkit-mask-position: left top, left bottom;
+    mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));;
+    mask-position: left top, left bottom;
+    mask-size: 100%;
+    border-radius: 30px;
+  
+    
+  }
+  .img_fader{
+    float: right;
+   width: 100%;
+   float: right;
+   -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+   -webkit-mask-size: 100% ;
+   -webkit-mask-position: left top, left bottom;
+   mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));;
+   mask-position: left top, left bottom;
+   mask-size: 100%;
+   border-radius: 30px;
+  }
+/*#barney{
+  width: 50em;
+}*/
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    background-color:#f1f1f1;
+    margin: auto 4em;
+  margin-bottom: 5rem;
+  }
+  #logo_media
+  {
+    float:none;
+    margin:   auto;
+    width: 60px;
+  }
+  /*background*/
+  
+  /*backgroun\*/
+  @media screen and (max-width: 1145px) 
+  {
+
+    #prihlaseni{
+      float: inline-end;
+    }
+  }
+  @media screen and (max-width: 1061px) 
+  {
+    .prvni, .druhy{
+      width:fit-content;
+     margin: auto 6em ;
+     text-align: center;
+     display: inline-block;
+    }
+    .img_fader{
+      width: 50%;
+      float: none;
+      margin: auto;
+      display: block;
+      height: max-content;
+    }
+    .img_fadel{
+      width: 50%;
+      float: none;
+      margin: auto;
+      display: block;
+      /*fade from right side becouse of cuted area*/
+      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+   -webkit-mask-size: 100% ;
+   -webkit-mask-position: left top, left bottom;
+   mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));;
+   mask-position: left top, left bottom;
+   mask-size: 100%;
+   
+      
+    }
+    .container{
+      display: block;
+    }
+ 
+
+
+    /*hamburger a všechno okolo toho*/
+    .header-left {
+      float: none;  
+      }
+    .header a {
+      float: none;
+      display: block;
+    
+    }
+    #prihlaseni{
+      float: none;
+    }
+    #odkazy
+    {
+      display: none;
+      flex-wrap: wrap;
+      transition: 0.4s;
+    }
+ 
+    .burger {
+      display: inline-block;
+      cursor: pointer;
+      margin: auto;
+      width: 35px;
+      float: none;
+    }
+
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #ff6000;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    
+    .change .bar1 {
+      -webkit-transform: rotate(-55deg) translate(-17px, 6px) scale(0.5,1)  ;
+      transform: rotate(-50deg) translate(-18px, 6px) scale(0.6,1) ;
+    
+    }
+    .btn{
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+    #odkazy.show{
+      display: block;
+     width: 100%;
+     transition: 0.4s ease;
+     }
+    #odkazy .btn .show{
+      -webkit-transform: translate(-8px, -8px);
+      transform:  translate(0px, 20px);    
+}
+    .btn .show{
+      display: block;
+      margin: auto;
+      text-align: center;
+      width: 100%;
+      float: none;
+
+    }
+    .change .bar2 {
+      opacity: 0;
+    }
+    
+    .change .bar3 {
+      -webkit-transform: rotate(55deg) translate(-8px, -8px);
+      transform: rotate(55deg) translate(-8px, -8px);
+    }
+    /*konec hamburger a všechno okolo toho*/
+    
+  }
