@@ -27,7 +27,15 @@
  mask-size: 100%;
 
   }
+
+}
+@media screen and (max-width: 1380px) 
+{
   .obdelnik{
-    display: block;
-  }
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+   }
 }
