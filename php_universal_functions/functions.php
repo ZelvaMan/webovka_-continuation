@@ -1,4 +1,4 @@
 <?php
 function function_alert($message) { 
-      echo "<script>alert('$message');</script>";
+      echo  "<script defer>window.onload=()=>alert('$message');</script>";
   }

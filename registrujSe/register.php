@@ -3,7 +3,7 @@ require "php_universal_functions/dbPripojeni.php";
 require "register_funkce.php";
 if(isset($_POST["email"]))
 {
-    if((strpos($_POST["uname"],"@")=== false))
+    if(!(strpos($_POST["uname"],"@")))
     {
         if(kontrolaHesla($_POST["passwd"],$_POST["passwdpotvrzeni"]))
         {
@@ -17,6 +17,6 @@ if(isset($_POST["email"]))
     }
     else
     {
-        function_alert("v uživatelském jméně jemůže být znak '@'");
+        function_alert("v uživatelském jméně nemůže být znak \'@\'");
     }
 }
