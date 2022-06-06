@@ -1,7 +1,7 @@
 <?php
 function ulozUzivatele($db,$uzivatelInfo)
 {
-  $hashed_passwd=password_hash($uzivatelInfo["passwd"],PASSWORD_DEFAULT);
+  $hashed_passwd=sha1($uzivatelInfo["passwd"]);
  $dotaz="insert into users (name,email,password)
   values ('{$uzivatelInfo["uname"]}',
  '{$uzivatelInfo["email"]}',

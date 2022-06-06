@@ -1,16 +1,17 @@
 <?php
-function Kontrola_Prihlaseni($db, $uzivatelInfo)
+function Kontrola_Prihlaseni($db)
 {
-   if (strpos($_POST["p_EmailOrname"], "@")) {
-      query("email", $db, $uzivatelInfo);
+   if (strpos($_POST["p_EmailOrName"], "@")) {
+      query("email", $db);
    } else {
-    query("name", $db, $uzivatelInfo);
+    query("name", $db);
    }
 }
-function query($term, $db, $uzivatelInfo)
+function query($term, $db)
 {
-   $hashed_passwd = password_hash($uzivatelInfo["p_passwd"], PASSWORD_DEFAULT);
-   $dotaz = 'select * from users where '.$term."= '{$uzivatelInfo["p_EmailOrname"]}' and password=".$hashed_passwd;
+   $hashed_passwd = sha1($_POST["p_passwd"]);
+   echo $hashed_passwd;
+   $dotaz = 'select * from users where '.$term." = ".$_POST["p_EmailOrName"].' and password = '.$hashed_passwd;
    mysqli_query($db, $dotaz);
    json_encode(mysqli_query($db, $dotaz));
 }
