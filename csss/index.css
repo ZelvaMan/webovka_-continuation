@@ -48,6 +48,9 @@ body::-webkit-scrollbar-thumb
   border-radius: 4px;
 
 }
+#icon{
+  height: 30px;
+}
 #prihlas {
   color: green;
 }
@@ -176,7 +179,7 @@ width: 100%;
       float: inline-end;
     }
   }
-  @media screen and (max-width: 1061px) 
+  @media screen and (max-width: 1115px) 
   {
     /*hamburger a všechno okolo toho*/
     .header-left {

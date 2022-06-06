@@ -1,11 +1,22 @@
 <?php
-require "dbPripojeni.php";
+require "php_universal_functions/dbPripojeni.php";
 require "register_funkce.php";
 if(isset($_POST["email"]))
 {
-    if(kontrolaHesla($_POST["passwd"],$_POST["passwdpotvrzeni"]))
+    if((strpos($_POST["uname"],"@")=== false))
     {
-        ulozUzivatele($db,$_POST);
-    } 
-
+        if(kontrolaHesla($_POST["passwd"],$_POST["passwdpotvrzeni"]))
+        {
+            ulozUzivatele($db,$_POST);
+            function_alert("registrace proběhla úspěšně");
+        } 
+        else
+        {
+            function_alert("hesla se neshodují");
+        }
+    }
+    else
+    {
+        function_alert("v uživatelském jméně jemůže být znak '@'");
+    }
 }
