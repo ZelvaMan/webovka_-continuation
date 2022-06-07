@@ -20,11 +20,16 @@
         <a class="btn" href="#Half-Life">Half-Life 2 epizoda 2</a>
         <a class="btn" href="#Half-Life">Half-Life: Alyx</a>
       </div>
-        <div id="prihlaseni">
-          <a id="prihlas" class="btn" href="prihlasitSe.php">Přihlásit se</a>
-          <a id="registr" class="btn" href="registrujSe.php">Registrovat se</a>
-          <a  class="btn" href="user.php"><img src="imgs/userIcon.png" alt="userIcon" id="icon"></a>
-        </div>
+      <div id="prihlaseni">
+      <?php
+    if(!isset($_SESSION["user"]))
+    echo '
+    <a id="prihlas" class="btn" href="prihlasitSe.php">Přihlásit se</a>
+    <a id="registr" class="btn" href="registrujSe.php">Registrovat se</a>
+   ';
+      ?>
+    <a  class="btn" href="user.php"><img src="imgs/userIcon.png" alt="userIcon" id="icon"></a>
+    </div>
       </nav>
       
     </div>

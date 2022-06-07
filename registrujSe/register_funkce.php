@@ -9,7 +9,4 @@ function ulozUzivatele($db,$uzivatelInfo)
    mysqli_query($db,$dotaz);
 }
 
-function kontrolaHesla($heslo1,$heslo2)
-{
-return ($heslo1==$heslo2);
-}
+

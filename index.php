@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 require "domu/domu_head.phtml";
 require "everywhere/everywhere_head.phtml";
 require "everywhere/navigation.phtml";
