@@ -3,11 +3,12 @@
 require "head.phtml";
 echo '
 <div id="profile">
-<form action="" method="POST">
+<form action="" name="uploadedfile" method="POST">
 <label for="onimg" class="upload">
 <img id="profile" src="'.$_SESSION["user"]["Profile_Img"].'" alt="">
 </label>
-<input id="onimg" name="img" type="file" accept="image/png, image/gif, image/jpeg"/>
+<input onchange="form.submit()" id="img" name="img" type="file" accept="image/png, image/gif, image/jpeg"/>
+</form>
 </div>
 <br>
 <h1>'.$_SESSION["user"]["name"].'</h1>
@@ -16,7 +17,11 @@ echo '
 <br>
 Datum registrace: '.$_SESSION["user"]["createdT"].'
 </div>';
-$soubor=$_FILES['img'];
+if(isset($_POST["img"]))
+{
+    $soubor=$_FILES['img']["tmp_name"];
+    echo $soubor;
+}
 if(isset($_POST["odhlasit"]))
 {
     unset($_SESSION["user"]);
@@ -24,7 +29,7 @@ if(isset($_POST["odhlasit"]))
 }
 ?>
 
-    <form method="post" action="">
+    <form  method="post" action="">
     <input type="hidden" value="odhlasit se" name="odhlasit">
     <input type="submit" value="odhlásit se">
     </form>
