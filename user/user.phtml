@@ -1,13 +1,14 @@
+<script src="js_library/acceptForm.js"></script>
 <div class="content">
 <?php
 require "head.phtml";
 echo '
 <div id="profile">
-<form action="" name="uploadedfile" method="POST">
-<label for="onimg" class="upload">
+<form action="" name="uploadedfile" method="POST" id="form" enctype="multipart/form-data">
+<label for="img" class="upload">
 <img id="profile" src="'.$_SESSION["user"]["Profile_Img"].'" alt="">
 </label>
-<input onchange="form.submit()" id="img" name="img" type="file" accept="image/png, image/gif, image/jpeg"/>
+<input onchange="submit()" id="img" name="img" type="file" accept="image/png, image/gif, image/jpeg">
 </form>
 </div>
 <br>
@@ -17,9 +18,11 @@ echo '
 <br>
 Datum registrace: '.$_SESSION["user"]["createdT"].'
 </div>';
+
 if(isset($_POST["img"]))
 {
-    $soubor=$_FILES['img']["tmp_name"];
+    var_dump($_FILES);
+    $soubor=$_FILES["img"]["tmp_name"];
     echo $soubor;
 }
 if(isset($_POST["odhlasit"]))

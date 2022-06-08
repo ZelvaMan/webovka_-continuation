@@ -23,10 +23,15 @@
       <div id="prihlaseni">
       <?php
     if(!isset($_SESSION["user"]))
-    echo '
-    <a id="prihlas" class="btn" href="prihlasitSe.php">Přihlásit se</a>
-    <a id="registr" class="btn" href="registrujSe.php">Registrovat se</a>
-   ';
+    {
+      echo '
+      <a id="prihlas" class="btn" href="prihlasitSe.php">Přihlásit se</a>
+      <a id="registr" class="btn" href="registrujSe.php">Registrovat se</a> ';
+    }
+    if(isset($_SESSION["user"]))
+    {
+      echo '<a  class="btn" href="forum.php">Fórum</a>';
+    }
       ?>
     <a  class="btn" href="user.php"><img src="imgs/userIcon.png" alt="userIcon" id="icon"></a>
     </div>
