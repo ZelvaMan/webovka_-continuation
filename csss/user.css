@@ -1,0 +1,39 @@
+#profile{
+  width: 200px;  
+  margin:  auto;
+}
+.content{
+    margin: auto;
+    text-align: center;
+}
+input[type=submit]{
+  
+   background-color: #f1f1f1;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+    border: none;
+    transition: 0.5s;
+}
+input[type=submit]:hover{
+  
+    background-color: #ff864ee1;
+    color: white; 
+    cursor: pointer;
+ }
+ #onimg{
+    display: none;
+}
+.upload :hover {
+    cursor: pointer;
+    background-color: #ff864ee1;
+    padding: 10px 10px 10px 10px;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+#informations{
+    color: gray;
+}

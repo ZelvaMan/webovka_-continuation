@@ -1,17 +1,31 @@
+<div class="content">
 <?php
+require "head.phtml";
 echo '
+<div id="profile">
+<form action="" method="POST">
+<label for="onimg" class="upload">
 <img id="profile" src="'.$_SESSION["user"]["Profile_Img"].'" alt="">
-';
+</label>
+<input id="onimg" name="img" type="file" accept="image/png, image/gif, image/jpeg"/>
+</div>
+<br>
+<h1>'.$_SESSION["user"]["name"].'</h1>
+<div id="informations"> 
+'.$_SESSION["user"]["email"].'
+<br>
+Datum registrace: '.$_SESSION["user"]["createdT"].'
+</div>';
+$soubor=$_FILES['img'];
 if(isset($_POST["odhlasit"]))
 {
     unset($_SESSION["user"]);
-    
+    header('Location: index.php');
 }
 ?>
-<div>
+
     <form method="post" action="">
     <input type="hidden" value="odhlasit se" name="odhlasit">
-    <input type="submit">
+    <input type="submit" value="odhlásit se">
     </form>
-
 </div>
