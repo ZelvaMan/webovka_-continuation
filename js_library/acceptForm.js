@@ -1,5 +1,5 @@
 function submit() {
-    document.getElementById("form").submit();
     console.log ("provedeno");
+    document.getElementById("form").submit();
     alert("jn");
 };

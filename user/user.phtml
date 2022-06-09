@@ -1,10 +1,17 @@
 <script src="js_library/acceptForm.js"></script>
+<script src="js_library/jquery-3.6.0.js"></script>
+<script>
+    function submit_form(){
+        var form = document.getElementById("form");
+        form.submit();
+    }
+    </script>
 <div class="content">
 <?php
 require "head.phtml";
 echo '
 <div id="profile">
-<form action="" name="uploadedfile" method="POST" id="form" enctype="multipart/form-data">
+<form  method="POST" id="form" enctype="multipart/form-data">
 <label for="img" class="upload">
 <img id="profile" src="'.$_SESSION["user"]["Profile_Img"].'" alt="">
 </label>
@@ -16,14 +23,11 @@ echo '
 <div id="informations"> 
 '.$_SESSION["user"]["email"].'
 <br>
-Datum registrace: '.$_SESSION["user"]["createdT"].'
+Datum registrace: '.date("j.n.Y",strtotime($_SESSION["user"]["createdT"])).'
 </div>';
-
-if(isset($_POST["img"]))
+if(isset($_FILES['img']))
 {
-    var_dump($_FILES);
-    $soubor=$_FILES["img"]["tmp_name"];
-    echo $soubor;
+  bla
 }
 if(isset($_POST["odhlasit"]))
 {
