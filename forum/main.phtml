@@ -4,12 +4,16 @@
 
 <div class="content"> 
 <?php
+    require "php_universal_functions/functions.php";
+    require "php_universal_functions/dbPripojeni.php";  
+    require "forum_functions.php";  
 if(!isset($_POST['novy']))
 {
 echo'<form  method="post" >
     <input type="hidden" value="novy" name="odhlasit">
     <input type="submit" name="novy" value="Nový">
-    </form>';
+    </form>
+    </br>';
 }
 if(isset($_POST['novy']))
 {
@@ -26,16 +30,38 @@ echo '<div class="obdelnik"><div class="content"> <form method="POST">
 <div class="content">
 <a href="forum.php">Zrušit vytvážení příspěvku</a>
 </div>
-</form></div>';
+</form></div>
+</div>';
 
 }
 if(isset($_POST['submit']))
 {
-    require "php_universal_functions/functions.php";
-    require "php_universal_functions/dbPripojeni.php";  
-    require "forum_functions.php";  
-    ulozPrispevek($db,$_POST);
+    savePost($db,$_POST);
+    header('Location: forum.php ');
+}
+$posts=getPosts($db);
+
+foreach($posts as $post)
+{
+    $user=getUser($db,$post);
+echo '<div class="idk post obdelnik">
+<div class="content lefttop">
+<img id="icon" src="'.$user['Profile_Img'].'" alt="">
+<h3>'.$user['name'].'</h3>
+
+</div>
+<div class="titleCon">
+<h2> '.$post['title'].'</h2>
+
+<div class="post content">
+'.$post['content'].'
+</div>
+</br>
+</br>
+</br>
+<div class="date">'.date("j.n.Y",strtotime($post['createdT'])).'</div>
+</div>
+</div>';
 }
 ?>
-
 </div>
