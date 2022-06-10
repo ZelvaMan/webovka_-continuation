@@ -1,9 +1,7 @@
 <?php
-
 function ulozPrispevek($db,$prispevekInfo)
 {
-   
-    $dotaz="insert into users (title,Uid,content)
+    $dotaz="insert into posts (title,Uid,content)
      values ('{$prispevekInfo["title"]}',
     '{$_SESSION['user']['Uid']}',
     '{$prispevekInfo["postContent"]}')";
