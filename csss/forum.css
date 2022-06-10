@@ -8,6 +8,7 @@ textarea{
 .lefttop{
     margin-left: 0;
     margin-top: 0;
+    margin-right: 0;
     float: left;
     
 }
@@ -16,6 +17,7 @@ textarea{
     text-align: unset;
     padding: 15px 15px 15px 15px;
     text-align: left; 
+    justify-content: unset;
 }
 .titleCon
 {

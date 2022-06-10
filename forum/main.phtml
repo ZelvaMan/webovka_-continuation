@@ -11,7 +11,7 @@ if(!isset($_POST['novy']))
 {
 echo'<form  method="post" >
     <input type="hidden" value="novy" name="odhlasit">
-    <input type="submit" name="novy" value="Nový">
+    <input type="submit" name="novy" value="Nový Příspěvek">
     </form>
     </br>';
 }
@@ -44,7 +44,7 @@ $posts=getPosts($db);
 foreach($posts as $post)
 {
     $user=getUser($db,$post);
-echo '<div class="idk post obdelnik">
+echo '<div class="post obdelnik">
 <div class="content lefttop">
 <img id="icon" src="'.$user['Profile_Img'].'" alt="">
 <h3>'.$user['name'].'</h3>

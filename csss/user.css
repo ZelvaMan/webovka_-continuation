@@ -5,6 +5,7 @@
 .content{
     margin: auto;
     text-align: center;
+    
     padding: 15px 15px 15px 15px;
 }
 input[type=submit],[type=button]{
