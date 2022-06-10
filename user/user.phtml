@@ -1,11 +1,5 @@
 <script src="js_library/acceptForm.js"></script>
-<script src="js_library/jquery-3.6.0.js"></script>
-<script>
-    function submit_form(){
-        var form = document.getElementById("form");
-        form.submit();
-    }
-    </script>
+
 <div class="content">
 <?php
 require "head.phtml";
@@ -27,7 +21,10 @@ Datum registrace: '.date("j.n.Y",strtotime($_SESSION["user"]["createdT"])).'
 </div>';
 if(isset($_FILES['img']))
 {
-  bla
+ 
+    $type=explode("/",  $_FILES['img']['type']);
+    move_uploaded_file($_FILES['img']["tmp_name"], "imgs/userIcon.".$type[1]."");
+    
 }
 if(isset($_POST["odhlasit"]))
 {
@@ -35,7 +32,6 @@ if(isset($_POST["odhlasit"]))
     header('Location: index.php');
 }
 ?>
-
     <form  method="post" action="">
     <input type="hidden" value="odhlasit se" name="odhlasit">
     <input type="submit" value="odhlásit se">

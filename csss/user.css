@@ -5,8 +5,9 @@
 .content{
     margin: auto;
     text-align: center;
+    padding: 15px 15px 15px 15px;
 }
-input[type=submit]{
+input[type=submit],[type=button]{
   
    background-color: #f1f1f1;
     text-align: center;
@@ -24,6 +25,13 @@ input[type=submit]:hover{
     color: white; 
     cursor: pointer;
  }
+ input[type=button]:hover{
+  
+    background-color: #ff864ee1;
+    color: white; 
+    cursor: pointer;
+ }
+
  #img{
     display: none;
 }
@@ -36,4 +44,5 @@ input[type=submit]:hover{
 }
 #informations{
     color: gray;
+
 }

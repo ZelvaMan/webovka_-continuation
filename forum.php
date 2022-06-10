@@ -1,5 +1,5 @@
 <?php
 session_start();
-require "universal/bootstrap_head.phtml";
 require "everywhere/everywhere_head.phtml";
+require "everywhere/navigation.phtml";
 require "forum/main.phtml";

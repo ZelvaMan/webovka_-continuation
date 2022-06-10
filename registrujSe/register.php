@@ -15,7 +15,9 @@ if(isset($_POST["email"]))
             if(kontrolaHesla($_POST["passwd"],$_POST["passwdpotvrzeni"]))
             {
                 ulozUzivatele($db,$_POST);
+                header('Location: prihlasitSe.php');
                 function_alert("registrace proběhla úspěšně");
+                
             } 
             else
             {
