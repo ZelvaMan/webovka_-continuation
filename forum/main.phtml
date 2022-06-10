@@ -14,24 +14,28 @@ echo'<form  method="post" >
 if(isset($_POST['novy']))
 {
 echo '<div class="obdelnik"><div class="content"> <form method="POST">
-<label for="postContent">Napište nový příspěvek</label><br>
+<label >Napište nový příspěvek</label><br>
 <div class="content">
-<input type="text" name="title">
+<label >Nadpis</label><br>
+<input type="text" required maxlength="20" name="title">
 </div>
-<textarea id="postContent" name="postContent" maxlength="10000"></textarea>
+<textarea id="postContent" required name="postContent" maxlength="2000"></textarea>
 <div class="content">
 <input type="submit" name="submit">
 </div>
+<div class="content">
+<a href="forum.php">Zrušit vytvážení příspěvku</a>
+</div>
 </form></div>';
-}
 
+}
 if(isset($_POST['submit']))
 {
     require "php_universal_functions/functions.php";
     require "php_universal_functions/dbPripojeni.php";  
-    
+    require "forum_functions.php";  
+    ulozPrispevek($db,$_POST);
 }
 ?>
 
-</div>
 </div>
