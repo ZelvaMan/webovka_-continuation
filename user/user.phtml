@@ -2,6 +2,8 @@
 
 <div class="content">
 <?php
+require "php_universal_functions/dbPripojeni.php";
+require "user_functions.php";
 require "head.phtml";
 echo '
 <div id="profile">
@@ -21,9 +23,13 @@ Datum registrace: '.date("j.n.Y",strtotime($_SESSION["user"]["createdT"])).'
 </div>';
 if(isset($_FILES['img']))
 {
- 
     $type=explode("/",  $_FILES['img']['type']);
-    move_uploaded_file($_FILES['img']["tmp_name"], "imgs/userIcon.".$type[1]."");
+    $path="imgs/users/".$_SESSION["user"]["Uid"]."userIcon.".$type[1];
+    $newImg=ChangeImg($db,$path);
+    unlink($_SESSION["user"]["Profile_Img"]);
+    $_SESSION["user"]["Profile_Img"]=$newImg;
+    move_uploaded_file($_FILES['img']["tmp_name"], $path);
+    
     
 }
 if(isset($_POST["odhlasit"]))
