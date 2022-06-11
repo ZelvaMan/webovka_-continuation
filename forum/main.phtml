@@ -28,7 +28,7 @@ echo '<div class="obdelnik"><div class="content"> <form method="POST">
 <input type="submit" name="submit">
 </div>
 <div class="content">
-<a href="forum.php">Zrušit vytvážení příspěvku</a>
+<a href="forum.php">Zrušit vytváření příspěvku</a>
 </div>
 </form></div>
 </div>';
@@ -44,7 +44,7 @@ $posts=getPosts($db);
 foreach($posts as $post)
 {
     $user=getUser($db,$post);
-echo '<div class="post obdelnik">
+    echo '<div class="post obdelnik">
 <div class="content lefttop">
 <img id="icon" src="'.$user['Profile_Img'].'" alt="">
 <h3>'.$user['name'].'</h3>
@@ -59,9 +59,12 @@ echo '<div class="post obdelnik">
 </br>
 </br>
 </br>
+</br>
 <div class="date">'.date("j.n.Y",strtotime($post['createdT'])).'</div>
 </div>
 </div>';
+
 }
 ?>
 </div>
+
