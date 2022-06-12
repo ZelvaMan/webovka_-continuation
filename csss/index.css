@@ -188,9 +188,7 @@ width: 100%;
    mask-size: 100%;
    border-radius: 30px;
   }
-/*#barney{
-  width: 50em;
-}*/
+
   .obdelnik {
     display: flex;
     align-items: center;
