@@ -1,4 +1,3 @@
-<script src="js_library/acceptForm.js"></script>
 
 <div class="content">
 <?php
@@ -19,8 +18,13 @@ echo '
 <div id="informations"> 
 '.$_SESSION["user"]["email"].'
 <br>
-Datum registrace: '.date("j.n.Y",strtotime($_SESSION["user"]["createdT"])).'
-</div>';
+Datum registrace: '.date("j.n.Y",strtotime($_SESSION["user"]["createdT"])).'';
+if(isset($_SESSION["admin"]))
+{
+    echo "<h2>Jste Admin</h2>";
+}
+echo '</div>';
+
 if(isset($_FILES['img']))
 {
     $type=explode("/",  $_FILES['img']['type']);
@@ -35,6 +39,7 @@ if(isset($_FILES['img']))
 if(isset($_POST["odhlasit"]))
 {
     unset($_SESSION["user"]);
+    unset($_SESSION["admin"]);
     header('Location: index.php');
 }
 ?>

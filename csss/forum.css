@@ -18,6 +18,8 @@ textarea{
     padding: 15px 15px 15px 15px;
     text-align: left; 
     justify-content: unset;
+    display: inline-flex;
+    
 }
 .titleCon
 {

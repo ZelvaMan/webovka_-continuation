@@ -12,7 +12,11 @@ if(isset($_POST["p_passwd"]))
     else
     {
        $_SESSION["user"]=$result ;
-        header('Location: user.php');
+       if($_SESSION["user"]["name"]=="hroch")
+       {
+        $_SESSION["admin"]=true;
+       }
+       header('Location: user.php');
     }
 
 
