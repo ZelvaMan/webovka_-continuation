@@ -215,7 +215,7 @@ width: 100%;
       float: inline-end;
     }
   }
-  @media screen and (max-width: 1115px) 
+  @media screen and (max-width: 830px) 
   {
     /*hamburger a všechno okolo toho*/
     .header-left {
