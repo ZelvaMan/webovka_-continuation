@@ -12,3 +12,26 @@
     flex-direction:column-reverse;
    }
 }
+@media screen and (max-width: 800px) 
+{
+  .obdelnik{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4em;
+  } 
+  .prvni {
+    width: 90%;
+    margin: auto 5px  auto 5px ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .druhy{
+    width: 90%;
+    margin: auto 5px  auto 5px ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  
+}

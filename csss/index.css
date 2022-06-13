@@ -188,6 +188,7 @@ width: 100%;
    mask-position: left top, left bottom;
    mask-size: 100%;
    border-radius: 30px;
+
   }
 
   .obdelnik {
@@ -217,15 +218,6 @@ width: 100%;
   }
   @media screen and (max-width: 830px) 
   {
-    /*hamburger a všechno okolo toho*/
-    .header-left {
-      float: none;  
-      }
-    .header a {
-      float: none;
-      display: block;
-    
-    }
     #prihlaseni{
       float: none;
     }
@@ -235,6 +227,16 @@ width: 100%;
       flex-wrap: wrap;
       transition: 0.4s;
     }
+    /*hamburger a všechno okolo toho*/
+    .header-left {
+      float: none;  
+      }
+    .header a {
+      float: none;
+      display: block;
+    }
+
+
  
     .burger {
       display: inline-block;
@@ -255,8 +257,8 @@ width: 100%;
     .change .bar1 {
       -webkit-transform: rotate(-55deg) translate(-17px, 6px) scale(0.5,1)  ;
       transform: rotate(-50deg) translate(-18px, 6px) scale(0.6,1) ;
-    
     }
+
     .btn{
       width: 100%;
       margin: auto;
