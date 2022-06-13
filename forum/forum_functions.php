@@ -11,7 +11,6 @@ function savePost($db,$prispevekInfo)
 function deletePost($db,$Pid)
 {
     $dotaz="delete from posts where Pid=\"".$Pid."\"";
-    echo $dotaz;
      mysqli_query($db,$dotaz); 
 }
 function getPosts($db)

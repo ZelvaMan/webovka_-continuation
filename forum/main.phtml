@@ -40,7 +40,11 @@ if(isset($_POST['submit']))
     header('Location: forum.php ');
 }
 $posts=getPosts($db);
-
+if(isset($_POST['Pid']))
+{
+    deletePost($db,$_POST['Pid']);
+    header('Location:forum.php');
+}
 foreach($posts as $post)
 {
     $user=getUser($db,$post);
@@ -62,21 +66,17 @@ foreach($posts as $post)
 if(isset($_SESSION["admin"]))
 {
     echo'<form  method="post" >
-    <input type="hidden" value="Smazat" name="smazat">
+    <input type="hidden" value="'.$post["Pid"].'"  name="Pid">
     <input  type="submit" name="smazat" value="Smazat" >
     </form>
     </br>';
 }
-if(isset($post['smazat']))
-{
-    echo$post['Pid'];
-    deletePost($db,$post['Pid']);
-    header('Location: forum.php ');
-}
+
 echo '<div class="date">'.date("j.n.Y",strtotime($post['createdT'])).'</div>
 </div>
 </div>';
 }
+
 ?>
 </div>
 

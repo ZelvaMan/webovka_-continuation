@@ -33,7 +33,8 @@ if(isset($_FILES['img']))
     unlink($_SESSION["user"]["Profile_Img"]);
     $_SESSION["user"]["Profile_Img"]=$newImg;
     move_uploaded_file($_FILES['img']["tmp_name"], $path);
-    
+    unset($_SESSION["user"]);
+    header('Location: index.php');
     
 }
 if(isset($_POST["odhlasit"]))
